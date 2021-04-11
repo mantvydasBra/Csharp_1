@@ -118,7 +118,8 @@ namespace _4_Darbas
             {
                 foreach (Process n in processes)
                 {
-                    label1.Text += $"Name: {n.ProcessName} | ID: {n.Id} | Is is responding: {n.Responding} | Memory: {n.PrivateMemorySize64}\n";    //get information about process             
+                    label1.Text += $"Name: {n.ProcessName} | ID: {n.Id} | NPM: {n.NonpagedSystemMemorySize64} | PM: {n.PagedMemorySize64} | WS: {n.WorkingSet64}" +
+                        $" | CPU(s): {n.TotalProcessorTime}\n";    //get information about process             
                     n.Kill();   //kills the process
                 }                
             }
